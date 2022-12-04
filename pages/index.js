@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import {Header, Footer} from '../components';
-import {Contact, Hero, News, Services, Team} from '../components/sections';
+import { Header, Footer } from '../components';
+import { Contact, Hero, News, Services, Team } from '../components/sections';
 
 const Home = () => {
   return (
@@ -11,8 +11,8 @@ const Home = () => {
         <meta name="description" content="Kvalitní pražský barbershop holiče Johny, který se těší, až se s Vámi bude moct podělit o své umění." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className='bg-black text-white'>
-        <Header />
+      <Header />
+      <main className='bg-[#161616] text-white flex flex-col gap-40'>
         <Hero />
         <Team />
         <Services />
