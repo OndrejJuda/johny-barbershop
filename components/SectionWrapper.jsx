@@ -3,8 +3,11 @@ import { HeadingSecondary, HeadingTertiary } from './typography';
 
 const SectionWrapper = ({ children, id, title, description }) => {
   return (
-    <section id={id}>
-      <header>
+    <section 
+    id={id}
+    className='flex flex-col items-center'
+    >
+      <header className='flex flex-col items-center'>
         <HeadingTertiary text={title} />
         <HeadingSecondary text={description} />
       </header>
