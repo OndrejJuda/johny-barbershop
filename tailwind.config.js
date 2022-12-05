@@ -5,7 +5,11 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        primary: ['IBM Plex Serif', 'serif'],
+      }
+    },
     colors: {
       'primary': {
         50: '#fbf7ef',
@@ -14,7 +18,7 @@ module.exports = {
         500: '#d6ad60',
         600: '#c19c56',
         700: '#967943',
-        900: '#2b2313'
+        900: '#2b2313',
       }
     }
   },

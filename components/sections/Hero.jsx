@@ -11,12 +11,12 @@ const Hero = () => {
         flex flex-col items-center gap-10'
       >
         <h2
-          className='text-4xl uppercase tracking-widest text-primary-300'
+          className='text-4xl uppercase font-extralight tracking-widest text-primary-300'
         >
           Barbershop, kam se rádi vrátíte
         </h2>
         <h1
-          className='text-[8rem] font-semibold text-primary-500'
+          className='text-[7.5rem] font-light text-primary-500'
         >
           Vítej u Johnyho
         </h1>

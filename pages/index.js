@@ -12,7 +12,7 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main className='bg-[#161616] text-white flex flex-col gap-40'>
+      <main className='bg-[#161616] text-white flex flex-col gap-40 font-primary'>
         <Hero />
         <Team />
         <Services />
