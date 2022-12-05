@@ -4,13 +4,13 @@ import Link from 'next/link';
 
 const NavLink = ({ href, title }) => (
   <Link href={href}>
-    <p className='text-2xl transition hover:text-yellow-500'>{title}</p>
+    <p className='text-2xl transition hover:text-primary-500'>{title}</p>
   </Link>
 );
 
 const Header = () => {
   return (
-    <header className='bg-[#161616] text-white'>
+    <header className='bg-[#161616] text-primary-50'>
       <nav className='flex justify-center items-center gap-44 h-40'>
         <NavLink href='#team' title='Tým' />
         <NavLink href='#services' title='Služby' />

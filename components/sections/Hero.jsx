@@ -8,16 +8,15 @@ const Hero = () => {
     >
       <div
         className='absolute z-10 top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]
-        flex flex-col items-center gap-10
-        text-yellow-600'
+        flex flex-col items-center gap-10'
       >
         <h2
-          className='text-4xl uppercase tracking-widest'
+          className='text-4xl uppercase tracking-widest text-primary-300'
         >
           Barbershop, kam se rádi vrátíte
         </h2>
         <h1
-          className='text-[8rem] font-semibold'
+          className='text-[8rem] font-semibold text-primary-500'
         >
           Vítej u Johnyho
         </h1>
