@@ -3,7 +3,7 @@ import { SectionWrapper } from '../';
 
 const Contact = () => {
   return (
-    <SectionWrapper id='contact' title='Kontakt' description='Neváhejte se nám ozvat'>
+    <SectionWrapper id='contact' title='Kontakt' description='Staň se naším klientem'>
       Contact
     </SectionWrapper>
   );
