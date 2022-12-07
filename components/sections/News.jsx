@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { SectionWrapper } from '../';
+import { SectionWrapper } from '../wrappers';
 
 const News = () => {
   useEffect(() => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { SectionWrapper } from '../';
+import { SectionWrapper, Frame } from '../wrappers';
 
 const TEAM = [
   { name: 'Carlos Santiago', photoUrl: '/barber1.jpg', instagramUrl: '' },
@@ -15,19 +15,25 @@ const Team = () => {
           TEAM.map(({ photoUrl, name, instagramUrl }, index) => (
             <article
               key={index}
-              className='relative group border border-primary-500 p-2 '
+              className='group'
             >
-              <img src={photoUrl} alt={name} className='w-full h-full object-cover w-96 h-[500px]' />
-              <div
-                className='w-96 h-[80%] absolute bottom-0
+              <Frame>
+                <div className='relative'>
+                  <img src={photoUrl} alt={name} className='w-full h-full object-cover w-96 h-[500px]' />
+                  <div
+                    className='w-96 h-[80%] absolute bottom-0
                 transition opacity-0 group-hover:opacity-100  
                 bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0)]'
-              />
-              <p
-                className='absolute bottom-[20%] left-[50%] -translate-x-[50%] 
-              text-2xl text-primary-100
-              transition opacity-0 group-hover:opacity-100'
-              >{name}</p>
+                  />
+                  <p
+                    className='absolute bottom-[20%] left-[50%] -translate-x-[50%] 
+                  text-2xl text-primary-100
+                  transition opacity-0 group-hover:opacity-100'
+                  >
+                    {name}
+                  </p>
+                </div>
+              </Frame>
             </article>
           ))
         }

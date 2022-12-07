@@ -1,5 +1,5 @@
 import React from 'react';
-import { HeadingSecondary, HeadingTertiary } from './typography';
+import { HeadingSecondary, HeadingTertiary } from '../typography';
 
 const SectionWrapper = ({ children, id, title, description }) => {
   return (
