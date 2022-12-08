@@ -25,13 +25,13 @@ const Services = () => {
   return (
     <SectionWrapper id='services' title='Služby' description='Kvalitní péče o vlasy a vousy'>
       <Frame hasDecoration>
-        <div className='p-16 flex flex-col items-center'>
-          <ul className='mb-8'>
+        <div className='p-16 flex flex-col items-center bg-primary-50 bg-opacity-5'>
+          <ul className='mb-24'>
             {
               SERVICES.map(({ name, price }, index) => (
                 <li
                   key={index}
-                  className='text-primary-500 text-xl font-light flex gap-1'
+                  className='text-primary-500 text-2xl font-light flex gap-1'
                 >
                   <p>{name}</p>
                   <span className='flex-1 min-w-[150px] border-b border-dotted mb-[6px]' />

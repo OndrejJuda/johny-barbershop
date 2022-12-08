@@ -1,5 +1,5 @@
 import React from 'react';
-import {CTAButton} from '../';
+import { CTAButton } from '../';
 
 const Hero = () => {
   return (
@@ -23,12 +23,11 @@ const Hero = () => {
         </h1>
         <CTAButton />
       </div>
-      {// eslint-disable-next-line @next/next/no-img-element
-        <img
-          src='/hero-image.jpg'
-          alt='hero image'
-          className='brightness-[0.2] object-cover h-full w-full blur-[2px]'
-        />}
+      <img
+        src='/hero-image.jpg'
+        alt='hero image'
+        className='brightness-[0.2] object-cover h-full w-full blur-[2px]'
+      />
     </section>
   );
 }
