@@ -27,7 +27,7 @@ const Hero = () => {
         <img
           src='/hero-image.jpg'
           alt='hero image'
-          className='grayscale brightness-[0.2] object-cover h-full w-full blur-[2px]'
+          className='brightness-[0.2] object-cover h-full w-full blur-[2px]'
         />}
     </section>
   );
