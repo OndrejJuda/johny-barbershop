@@ -1,4 +1,5 @@
 import React from 'react';
+import {CTAButton} from '../';
 
 const Hero = () => {
   return (
@@ -20,6 +21,7 @@ const Hero = () => {
         >
           Vítej u Johnyho
         </h1>
+        <CTAButton />
       </div>
       {// eslint-disable-next-line @next/next/no-img-element
         <img

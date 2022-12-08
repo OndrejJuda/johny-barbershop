@@ -17,7 +17,7 @@ const Team = () => {
               key={index}
               className='group'
             >
-              <Frame>
+              <Frame hasDecoration>
                 <div className='relative'>
                   <img src={photoUrl} alt={name} className='w-full h-full object-cover w-96 h-[500px]' />
                   <div
