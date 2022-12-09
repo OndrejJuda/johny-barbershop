@@ -19,7 +19,7 @@ const News = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await fetch('https://api.woxo.tech/instagram?source=%40ondrajuda&count=40&type=hashtag&sort=top&token=null');
+      const response = await fetch('https://api.woxo.tech/instagram?source=%40ondrajuda&count=20&type=hashtag&sort=top&token=null');
       const { data } = await response.json();
       const transformedData = data.map(({ id, image: imageUrl, link, text3: text, text7: date }) => ({
         id,
@@ -33,6 +33,12 @@ const News = () => {
 
     fetchPosts();
   }, []);
+
+  const slideHandler = ({ item, itemsInSlide }) => {
+    if (item + itemsInSlide * 2 >= posts.length) {
+      console.log('yes')
+    }
+  };
 
   let items = [];
 
@@ -81,7 +87,9 @@ const News = () => {
               items={items}
               disableButtonsControls
               mouseTracking
+              touchTracking
               responsive={responsive}
+              onSlideChanged={slideHandler}
             />
           )
           : <div className='text-4xl'>LOADING</div>
