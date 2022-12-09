@@ -43,6 +43,11 @@ const News = () => {
         className='group flex justify-center'
       >
         <Image imageAlt={text} photoUrl={imageUrl} >
+          <div
+            className='w-[400px] h-[100%] absolute bottom-0
+                transition opacity-0 group-hover:opacity-100  
+                bg-gradient-to-b from-[rgba(0,0,0,0.8)] to-[rgba(0,0,0,0.8)]'
+          />
           <div className='absolute bottom-[20%] left-[50%] -translate-x-[50%]
                 transition opacity-0 group-hover:opacity-100'>
             <Link href={link} target='_blank'>

@@ -24,6 +24,11 @@ const Team = () => {
                 imageAlt={name}
                 photoUrl={photoUrl}
               >
+                <div
+                  className='w-[400px] h-[80%] absolute bottom-0
+                      transition opacity-0 group-hover:opacity-100  
+                      bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0)]'
+                />
                 <div className='absolute bottom-[20%] left-[50%] -translate-x-[50%]
                 transition opacity-0 group-hover:opacity-100'>
                   <Link href={instagramUrl} target='_blank'>
