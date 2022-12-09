@@ -31,3 +31,8 @@ html {
 .alice-carousel__dots-item.__active{
   background-color: #967943 !important;
 }
+
+.react-icons {
+  vertical-align: middle;
+  color: #f3e6cf;
+}

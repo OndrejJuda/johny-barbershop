@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { SectionWrapper } from '../wrappers';
 import { Image } from '../';
+import { CiInstagram } from 'react-icons/ci';
+import Link from 'next/link';
 
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
@@ -41,7 +43,25 @@ const News = () => {
         className='group flex justify-center'
       >
         <Image imageAlt={text} photoUrl={imageUrl} >
-
+          <div className='absolute bottom-[20%] left-[50%] -translate-x-[50%]
+                transition opacity-0 group-hover:opacity-100'>
+            <Link href={link} target='_blank'>
+              <div className='group/link flex flex-col gap-4 items-center justify-center w-[320px] 
+                    '>
+                <p
+                  className='text-xl text-primary-100'
+                >
+                  {text}
+                </p>
+                <div className='transition group-hover/link:scale-150 group-active/link:scale-110'>
+                  <CiInstagram
+                    color='#f3e6cf'
+                    size='40px'
+                  />
+                </div>
+              </div>
+            </Link>
+          </div>
         </Image>
       </div>
     ));
