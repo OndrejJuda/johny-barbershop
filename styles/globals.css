@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@100;300;400;500;600;700&display=swap');
+@import "react-alice-carousel/lib/alice-carousel.css";
 
 @tailwind base;
 @tailwind components;
@@ -7,4 +8,26 @@
 html {
   --scroll-behavior: smooth !important;
   scroll-behavior: smooth !important;
+}
+
+.alice-carousel__wrapper {
+  overflow-x: clip !important;
+  overflow-y: initial !important;
+}
+
+.alice-carousel__dots {
+  margin-top: 4rem !important;
+}
+
+.alice-carousel__dots-item {
+  background-color: #f3e6cf !important;
+}
+
+.alice-carousel__dots-item:hover {
+  background-color: #967943 !important;
+  transition: all 0.3s;
+}
+
+.alice-carousel__dots-item.__active{
+  background-color: #967943 !important;
 }
