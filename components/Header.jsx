@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 
 const NavLink = ({ href, title }) => (
@@ -15,9 +14,9 @@ const NavLink = ({ href, title }) => (
   </Link>
 );
 
-const Header = () => {
+const Header = ({bgColor}) => {
   return (
-    <header className='bg-[#161616] text-primary-300 font-primary font-light'>
+    <header className={`${bgColor} text-primary-300 font-primary font-light`}>
       <nav className='flex justify-center items-center gap-44 h-40'>
         <NavLink href='#team' title='Tým' />
         <NavLink href='#services' title='Služby' />

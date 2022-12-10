@@ -1,5 +1,6 @@
 import React from 'react';
-import { CTAButton } from '../';
+import { Button } from '../';
+import Link from 'next/link';
 
 const Hero = () => {
   return (
@@ -21,16 +22,18 @@ const Hero = () => {
         >
           Vítej u Johnyho
         </h1>
-        <div className='group'>
-          <CTAButton>Objednej se</CTAButton>
-        </div>
+        <Link href='#contact'>
+          <div className='group'>
+            <Button>Objednej se</Button>
+          </div>
+        </Link>
       </div>
       <img
         src='/hero-image.jpg'
         alt='hero image'
         className='brightness-[0.2] object-cover h-full w-full blur-[2px]'
       />
-    </section>
+    </section >
   );
 }
 

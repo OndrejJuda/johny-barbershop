@@ -1,6 +1,7 @@
 import React from 'react';
 import { SectionWrapper, Frame } from '../wrappers';
-import { CTAButton } from '../';
+import { Button } from '../';
+import Link from 'next/link';
 
 const SERVICES = [
   { name: 'Střih', price: 450 },
@@ -40,7 +41,11 @@ const Services = () => {
               ))
             }
           </ul>
-          <CTAButton>Objednej se</CTAButton>
+          <div className='group'>
+            <Link href='#contact'>
+              <Button>Objednej se</Button>
+            </Link>
+          </div>
         </div>
       </Frame>
     </SectionWrapper>
