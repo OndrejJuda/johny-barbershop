@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Frame = ({ children, hasDecoration, style }) => {
+const Frame = ({ children, hasDecoration, hasBorder, style }) => {
   return (
-    <div className={`border relative border-primary-500 p-[8px] ${style ? style : ''}`}>
+    <div className={`${hasBorder ? 'border' : ''} relative border-primary-500 p-[8px] ${style ? style : ''}`}>
       {
         hasDecoration && (
           <img

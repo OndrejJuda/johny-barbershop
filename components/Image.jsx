@@ -3,7 +3,7 @@ import { Frame } from './wrappers';
 
 const Image = ({photoUrl, imageAlt, children}) => {
   return (
-    <Frame hasDecoration>
+    <Frame hasDecoration hasBorder>
       <div className='relative'>
         <img src={photoUrl} alt={imageAlt} className='object-cover w-[400px] h-[500px]' />
         {

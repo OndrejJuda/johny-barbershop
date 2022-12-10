@@ -2,18 +2,21 @@ import React from 'react';
 import Link from 'next/link';
 import { Frame } from './wrappers';
 
-const CTAButton = () => {
+const CTAButton = ({ children }) => {
   return (
     <Link href='#contact'>
       <div className='group'>
-        <Frame style='transition group-hover:p-[4px] group-hover:m-[4px]
-        group-active:p-[6px] group-active:m-[2px]'>
+        <Frame
+          style='transition group-hover:p-[4px] group-hover:m-[4px]
+        group-active:p-[6px] group-active:m-[2px]'
+          hasBorder
+        >
           <button
             type='button'
             className='text-primary-300 text-2xl font-light bg-primary-50 bg-opacity-20 p-4
           transition group-hover:text-primary-500'
           >
-            Objednej se
+            {children}
           </button>
         </Frame>
       </div>

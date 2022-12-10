@@ -40,7 +40,7 @@ const Services = () => {
               ))
             }
           </ul>
-          <CTAButton />
+          <CTAButton>Objednej se</CTAButton>
         </div>
       </Frame>
     </SectionWrapper>

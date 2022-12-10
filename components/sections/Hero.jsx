@@ -21,7 +21,7 @@ const Hero = () => {
         >
           Vítej u Johnyho
         </h1>
-        <CTAButton />
+        <CTAButton>Objednej se</CTAButton>
       </div>
       <img
         src='/hero-image.jpg'
