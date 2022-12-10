@@ -21,7 +21,9 @@ const Hero = () => {
         >
           Vítej u Johnyho
         </h1>
-        <CTAButton>Objednej se</CTAButton>
+        <div className='group'>
+          <CTAButton>Objednej se</CTAButton>
+        </div>
       </div>
       <img
         src='/hero-image.jpg'
