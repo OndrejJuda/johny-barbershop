@@ -11,15 +11,10 @@ import { CiInstagram, CiFacebook } from 'react-icons/ci';
 const Contact = () => {
   return (
     <SectionWrapper id='contact' title='Kontakt' description='Staň se naším klientem'>
-      <div className='flex justify-around items-center pb-64 gap-32'>
-        <Frame hasDecoration>
-          <div className='w-[700px] h-[550px] relative'>
-            <Map />
-          </div>
-        </Frame>
-        <div className='text-primary-100'>
-          <h4 className='text-4xl mb-8'>Otevírací hodiny</h4>
-          <div className='flex gap-12 text-3xl font-light mb-12'>
+      <div className='flex flex-col lg:flex-row justify-around items-center pb-64 gap-20 xl:gap-32'>
+        <div className='text-primary-100 lg:order-2'>
+          <h4 className='text-3xl md:text-4xl mb-8'>Otevírací hodiny</h4>
+          <div className='flex gap-12 text-2xl md:text-3xl font-light mb-12'>
             <div className='flex flex-col gap-2'>
               <p>Pondělí - pátek</p>
               <p>Sobota</p>
@@ -31,7 +26,7 @@ const Contact = () => {
               <p>10:00 - 17:00</p>
             </div>
           </div>
-          <div className='flex flex-col gap-10 items-start'>
+          <div className='flex flex-col gap-10 items-center md:items-start'>
             <a href='tel:+420123456789' className='transition group'>
               <Button>
                 <div className='flex items-center gap-8'>
@@ -68,6 +63,11 @@ const Contact = () => {
             </div>
           </div>
         </div>
+        <Frame hasDecoration>
+          <div className='w-[350px] md:w-[700px] lg:w-[350px] h-[600px] xl:w-[700px] xl:h-[550px] relative'>
+            <Map />
+          </div>
+        </Frame>
       </div>
     </SectionWrapper>
   );

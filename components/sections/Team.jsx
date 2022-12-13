@@ -13,7 +13,7 @@ const TEAM = [
 const Team = () => {
   return (
     <SectionWrapper id='team' title='Tým' description='Seznam se s našimi holiči'>
-      <div className='flex gap-24 flex-wrap'>
+      <div className='flex flex-col gap-36 lg:flex-row lg:gap-12 xl:gap-24'>
         {
           TEAM.map(({ photoUrl, name, instagramUrl }, index) => (
             <article
@@ -25,7 +25,7 @@ const Team = () => {
                 photoUrl={photoUrl}
               >
                 <div
-                  className='w-[400px] h-[80%] absolute bottom-0
+                  className='w-full h-[80%] absolute bottom-0
                       transition opacity-0 group-hover:opacity-100  
                       bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0)]'
                 />

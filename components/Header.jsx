@@ -16,7 +16,7 @@ const NavLink = ({ href, title }) => (
 
 const Header = ({bgColor}) => {
   return (
-    <header className={`${bgColor} text-primary-300 font-primary font-light`}>
+    <header className={`${bgColor} text-primary-300 font-primary font-light hidden xl:block`}>
       <nav className='flex justify-center items-center gap-44 h-40'>
         <NavLink href='#team' title='Tým' />
         <NavLink href='#services' title='Služby' />
