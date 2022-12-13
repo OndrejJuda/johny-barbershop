@@ -56,22 +56,22 @@ const News = () => {
           />
           <div className='absolute w-[80%] bottom-[20%] left-[50%] -translate-x-[50%]
                 transition opacity-0 group-hover:opacity-100'>
-            <Link href={link} target='_blank'>
-              <div className='group/link flex flex-col gap-4 items-center justify-center w-full 
+            <div className='group/link flex flex-col gap-4 items-center justify-center w-full 
                     '>
-                <p
-                  className='text-xl text-primary-100'
-                >
-                  {text}
-                </p>
+              <p
+                className='text-xl text-primary-100'
+              >
+                {text}
+              </p>
+              <Link href={link} target='_blank'>
                 <div className='transition group-hover/link:scale-150 group-active/link:scale-110'>
                   <CiInstagram
                     color='#f3e6cf'
                     size='40px'
                   />
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </div>
           </div>
         </Image>
       </div>
