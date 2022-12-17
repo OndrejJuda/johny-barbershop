@@ -6,8 +6,9 @@ const NavLink = ({ href, title, setIsOpened }) => (
   <Link
     href={href}
     onClick={() => {
-      setIsOpened && setIsOpened(false)
-    }}>
+      setIsOpened && setIsOpened(false);
+    }}
+  >
     <div className='group flex justify-center flex-col'>
       <p className='text-2xl transition group-hover:text-primary-500 mb-1 text-center'>{title}</p>
       <img
@@ -49,13 +50,19 @@ const Header = ({ bgColor }) => {
     };
   }, []);
 
-  if (process.window) {
+  useEffect(() => {
     if (isOpened) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'auto';
     }
-  }
+  }, [isOpened]);
+
+  const showButton = () => {
+    if (isOpened) return true;
+
+    return isVisible;
+  };
 
   return (
     <header className={`${bgColor} text-primary-300 font-primary font-light`}>
@@ -76,9 +83,9 @@ const Header = ({ bgColor }) => {
         <button
           type='button'
           className={`flex xl:hidden fixed z-30 top-5 left-5 
-          bg-primary-50 text-primary-700 rounded-full p-4 
+          bg-primary-50 text-primary-700 rounded-full p-4 select-none
           transition ${isOpened ? 'rotate-180' : ''} duration-500
-          ${isVisible ? '-translate-y-0' : '-translate-y-[100px]'}`}
+          ${showButton() ? '-translate-y-0' : '-translate-y-[100px]'}`}
           onClick={() => setIsOpened((prevValue) => !prevValue)}
         >
           <RiScissors2Line size={48} />
