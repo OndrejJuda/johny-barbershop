@@ -91,7 +91,7 @@ const Contact = () => {
         </motion.div>
 
         <motion.div
-          className='h-[700px] flex justify-center items-end'
+          className='h-[610px] flex justify-center items-start'
           initial='offscreen'
           whileInView='onscreen'
           viewport={{ once: true, amount: 'all' }}
@@ -102,17 +102,33 @@ const Contact = () => {
               variants={{
                 offscreen: {
                   height: 0
-                  
                 },
                 onscreen: {
-                  height: 600
+                  height: 610
                 }
               }}
               transition={{
-                duration: 1
+                duration: 0.5
               }}
             >
-              <Map />
+              <motion.div
+                className='h-[610px]'
+                variants={{
+                  offscreen: {
+                    opacity: 0
+
+                  },
+                  onscreen: {
+                    opacity: 100
+                  }
+                }}
+                transition={{
+                  delay: 0.5,
+                  duration: 1
+                }}
+              >
+                <Map />
+              </motion.div>
             </motion.div>
           </Frame>
         </motion.div>

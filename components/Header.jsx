@@ -78,7 +78,7 @@ const Header = ({ bgColor }) => {
         <ul className='flex justify-center items-center gap-44 '>
           <NavLink href='#team' title='Tým' />
           <NavLink href='#services' title='Služby' />
-          <NavLink href='/' onClick={() => setIsOpened(false)}>
+          <NavLink href='/'>
             <img
               alt='logo'
               src='/logo.png'
@@ -104,7 +104,7 @@ const Header = ({ bgColor }) => {
         transition ${isOpened ? 'translate-x-0' : '-translate-x-[100%]'} duration-700`}>
           <nav className={`flex justify-center w-screen h-screen z-20 fixed `}>
             <ul className='flex justify-center items-center flex-col gap-24'>
-              <NavLink href='/' onClick={() => setIsOpened(false)}>
+              <NavLink href='/' setIsOpened={setIsOpened}>
                 <img
                   alt='logo'
                   src='/logo.png'
