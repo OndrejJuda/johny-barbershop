@@ -74,8 +74,8 @@ const Header = ({ bgColor }) => {
 
   return (
     <header className={`${bgColor} text-primary-300 font-primary font-light`}>
-      <nav className='justify-center items-center gap-44 h-40 hidden xl:flex'>
-        <ul>
+      <nav className='h-40 hidden xl:flex justify-center'>
+        <ul className='flex justify-center items-center gap-44 '>
           <NavLink href='#team' title='Tým' />
           <NavLink href='#services' title='Služby' />
           <NavLink href='/' onClick={() => setIsOpened(false)}>
@@ -89,10 +89,10 @@ const Header = ({ bgColor }) => {
           <NavLink href='#contact' title='Kontakt' />
         </ul>
       </nav>
-      <>
+      <div className='xl:hidden'>
         <button
           type='button'
-          className={`flex xl:hidden fixed z-30 top-5 left-5 
+          className={`flex fixed z-30 top-5 left-5 
           bg-primary-50 text-primary-700 rounded-full p-4 select-none
           transition ${isOpened ? 'rotate-180' : ''} duration-500
           ${showButton() ? '-translate-y-0' : '-translate-y-[100px]'}`}
@@ -102,8 +102,8 @@ const Header = ({ bgColor }) => {
         </button>
         <div className={`bg-primary-900 fixed z-20  w-screen h-screen 
         transition ${isOpened ? 'translate-x-0' : '-translate-x-[100%]'} duration-700`}>
-          <nav className={`flex xl:hidden w-screen h-screen z-20 fixed justify-center items-center flex-col gap-24`}>
-            <ul>
+          <nav className={`flex justify-center w-screen h-screen z-20 fixed `}>
+            <ul className='flex justify-center items-center flex-col gap-24'>
               <NavLink href='/' onClick={() => setIsOpened(false)}>
                 <img
                   alt='logo'
@@ -118,7 +118,7 @@ const Header = ({ bgColor }) => {
             </ul>
           </nav>
         </div>
-      </>
+      </div>
     </header>
   );
 }
