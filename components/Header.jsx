@@ -2,22 +2,30 @@ import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { RiScissors2Line } from 'react-icons/ri';
 
-const NavLink = ({ href, title, setIsOpened }) => (
-  <Link
-    href={href}
-    onClick={() => {
-      setIsOpened && setIsOpened(false);
-    }}
-  >
-    <div className='group flex justify-center flex-col'>
-      <p className='text-2xl transition group-hover:text-primary-500 mb-1 text-center'>{title}</p>
-      <img
-        src='/lines/line-9.svg'
-        alt='line'
-        className='opacity-0 group-hover:opacity-100 w-[150px] transition'
-      />
-    </div>
-  </Link>
+const NavLink = ({ href, title, setIsOpened, children }) => (
+  <li>
+    <Link
+      href={href}
+      onClick={() => {
+        setIsOpened && setIsOpened(false);
+      }}
+    >
+      {
+        children ? (
+          children
+        ) : (
+          <div className='group flex justify-center flex-col'>
+            <p className='text-2xl transition group-hover:text-primary-500 mb-1 text-center'>{title}</p>
+            <img
+              src='/lines/line-9.svg'
+              alt='line'
+              className='opacity-0 group-hover:opacity-100 w-[150px] transition'
+            />
+          </div>
+        )
+      }
+    </Link>
+  </li>
 );
 
 const Header = ({ bgColor }) => {
@@ -67,17 +75,19 @@ const Header = ({ bgColor }) => {
   return (
     <header className={`${bgColor} text-primary-300 font-primary font-light`}>
       <nav className='justify-center items-center gap-44 h-40 hidden xl:flex'>
-        <NavLink href='#team' title='Tým' />
-        <NavLink href='#services' title='Služby' />
-        <Link href='/'>
-          <img
-            alt='logo'
-            src='/logo.png'
-            className='w-48'
-          />
-        </Link>
-        <NavLink href='#news' title='Novinky' />
-        <NavLink href='#contact' title='Kontakt' />
+        <ul>
+          <NavLink href='#team' title='Tým' />
+          <NavLink href='#services' title='Služby' />
+          <NavLink href='/' onClick={() => setIsOpened(false)}>
+            <img
+              alt='logo'
+              src='/logo.png'
+              className='w-48'
+            />
+          </NavLink>
+          <NavLink href='#news' title='Novinky' />
+          <NavLink href='#contact' title='Kontakt' />
+        </ul>
       </nav>
       <>
         <button
@@ -90,20 +100,24 @@ const Header = ({ bgColor }) => {
         >
           <RiScissors2Line size={48} />
         </button>
-        <div className={`bg-primary-900 opacity-100 fixed z-20 transition ${isOpened ? 'w-screen h-screen block' : 'hidden'}`}> </div>
-        <nav className={`${isOpened ? 'flex' : 'hidden'} xl:hidden w-screen h-screen z-20 fixed justify-center items-center flex-col gap-24`}>
-          <Link href='/' onClick={() => setIsOpened(false)}>
-            <img
-              alt='logo'
-              src='/logo.png'
-              className='w-48'
-            />
-          </Link>
-          <NavLink href='#team' title='Tým' setIsOpened={setIsOpened} />
-          <NavLink href='#services' title='Služby' setIsOpened={setIsOpened} />
-          <NavLink href='#news' title='Novinky' setIsOpened={setIsOpened} />
-          <NavLink href='#contact' title='Kontakt' setIsOpened={setIsOpened} />
-        </nav>
+        <div className={`bg-primary-900 fixed z-20  w-screen h-screen 
+        transition ${isOpened ? 'translate-x-0' : '-translate-x-[100%]'} duration-700`}>
+          <nav className={`flex xl:hidden w-screen h-screen z-20 fixed justify-center items-center flex-col gap-24`}>
+            <ul>
+              <NavLink href='/' onClick={() => setIsOpened(false)}>
+                <img
+                  alt='logo'
+                  src='/logo.png'
+                  className='w-48'
+                />
+              </NavLink>
+              <NavLink href='#team' title='Tým' setIsOpened={setIsOpened} />
+              <NavLink href='#services' title='Služby' setIsOpened={setIsOpened} />
+              <NavLink href='#news' title='Novinky' setIsOpened={setIsOpened} />
+              <NavLink href='#contact' title='Kontakt' setIsOpened={setIsOpened} />
+            </ul>
+          </nav>
+        </div>
       </>
     </header>
   );

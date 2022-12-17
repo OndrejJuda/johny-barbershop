@@ -28,11 +28,15 @@ html {
   transition: all 0.3s;
 }
 
-.alice-carousel__dots-item.__active{
+.alice-carousel__dots-item.__active {
   background-color: #967943 !important;
 }
 
 .react-icons {
   vertical-align: middle;
   color: #f3e6cf;
+}
+
+li {
+  list-style: none;
 }
