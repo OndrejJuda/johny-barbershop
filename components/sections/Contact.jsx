@@ -91,21 +91,25 @@ const Contact = () => {
         </motion.div>
 
         <motion.div
-          className='h-[600px] flex justify-center items-start'
+          className='h-[700px] flex justify-center items-end'
           initial='offscreen'
           whileInView='onscreen'
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 'all' }}
         >
           <Frame hasDecoration>
             <motion.div
-              className='w-[350px] md:w-[700px] lg:w-[350px] h-[600px] xl:w-[700px] relative'
+              className='w-[350px] md:w-[700px] lg:w-[350px] xl:w-[700px] relative'
               variants={{
                 offscreen: {
                   height: 0
+                  
                 },
                 onscreen: {
                   height: 600
                 }
+              }}
+              transition={{
+                duration: 1
               }}
             >
               <Map />
