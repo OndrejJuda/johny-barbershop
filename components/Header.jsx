@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { RiScissors2Line } from 'react-icons/ri';
 
@@ -21,6 +21,39 @@ const NavLink = ({ href, title, setIsOpened }) => (
 
 const Header = ({ bgColor }) => {
   const [isOpened, setIsOpened] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+
+  const previousYScroll = useRef();
+
+  useEffect(() => {
+    const handleScroll = (event) => {
+      const { scrollY } = window;
+
+      const diffY = previousYScroll.current - scrollY
+      previousYScroll.current = scrollY;
+
+      if (scrollY < 200) {
+        setIsVisible(true);
+      }
+      else if (diffY > 0) { // scrolling upwards
+        setIsVisible(true);
+      } else if (diffY < 0) { // scrolling downwards
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  if (isOpened) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = 'auto';
+  }
 
   return (
     <header className={`${bgColor} text-primary-300 font-primary font-light`}>
@@ -42,7 +75,8 @@ const Header = ({ bgColor }) => {
           type='button'
           className={`flex xl:hidden fixed z-30 top-5 left-5 
           bg-primary-50 text-primary-700 rounded-full p-4 
-          transition ${isOpened ? 'rotate-180' : ''}`}
+          transition ${isOpened ? 'rotate-180' : ''} duration-500
+          ${isVisible ? '-translate-y-0' : '-translate-y-[100px]'}`}
           onClick={() => setIsOpened((prevValue) => !prevValue)}
         >
           <RiScissors2Line size={48} />
