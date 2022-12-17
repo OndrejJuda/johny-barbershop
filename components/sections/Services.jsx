@@ -2,6 +2,7 @@ import React from 'react';
 import { SectionWrapper, Frame } from '../wrappers';
 import { Button } from '../';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const SERVICES = [
   { name: 'Střih', price: 450 },
@@ -26,8 +27,39 @@ const Services = () => {
   return (
     <SectionWrapper id='services' title='Služby' description='Kvalitní péče o vlasy a vousy'>
       <Frame hasDecoration>
-        <div className='p-8 md:p-16 flex flex-col items-center bg-primary-50 bg-opacity-5 w-full'>
-          <ul className='mb-24'>
+
+        <motion.div
+          initial='offscreen'
+          whileInView='onscreen'
+          viewport={{ once: true, amount: 'all' }}
+          variants={{
+            offscreen: {
+              height: 0
+            },
+            onscreen: {
+              height: 'auto'
+            }
+          }}
+          transition={{
+            duration: 0.5, delay: 0.2
+          }}
+          className='p-8 md:p-16 flex flex-col items-center bg-primary-50 bg-opacity-5 w-full'
+        >
+          <motion.ul
+            className='mb-24'
+            transition={{
+              delay: 0.7,
+              duration: 0.5
+            }}
+            variants={{
+              offscreen: {
+                opacity: 0
+              },
+              onscreen: {
+                opacity: 1
+              }
+            }}
+          >
             {
               SERVICES.map(({ name, price }, index) => (
                 <li
@@ -40,13 +72,27 @@ const Services = () => {
                 </li>
               ))
             }
-          </ul>
-          <div className='group'>
+          </motion.ul>
+          <motion.div
+            className='group'
+            transition={{
+              delay: 0.7,
+              duration: 0.5
+            }}
+            variants={{
+              offscreen: {
+                opacity: 0
+              },
+              onscreen: {
+                opacity: 1
+              }
+            }}
+          >
             <Link href='#contact'>
               <Button>Objednej se</Button>
             </Link>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </Frame>
     </SectionWrapper>
   );

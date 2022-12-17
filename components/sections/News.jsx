@@ -3,6 +3,7 @@ import { SectionWrapper } from '../wrappers';
 import { Image } from '../';
 import { CiInstagram } from 'react-icons/ci';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
@@ -80,20 +81,33 @@ const News = () => {
 
   return (
     <SectionWrapper id='news' title='Novinky' description='Měj vždy čerstvé informace'>
-      {
-        posts.length > 0
-          ? (
-            <AliceCarousel
-              items={items}
-              disableButtonsControls
-              mouseTracking
-              touchTracking
-              responsive={responsive}
-              onSlideChanged={slideHandler}
-            />
-          )
-          : <div className='text-4xl'>LOADING</div>
-      }
+      <motion.div
+      className='w-full'
+        initial={{
+          y: 200
+        }}
+        whileInView={{
+          y: 0
+        }}
+        viewport={{
+          once: true,
+        }}
+      >
+        {
+          posts.length > 0
+            ? (
+              <AliceCarousel
+                items={items}
+                disableButtonsControls
+                mouseTracking
+                touchTracking
+                responsive={responsive}
+                onSlideChanged={slideHandler}
+              />
+            )
+            : <div className='text-4xl'>LOADING</div>
+        }
+      </motion.div>
     </SectionWrapper>
   );
 }
